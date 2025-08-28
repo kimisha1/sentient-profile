@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hat Overlay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Put a Hat on Your Photo</h1>
+    <div class="controls">
+      <label class="btn">
+        Choose photo
+        <input id="photoInput" type="file" accept="image/*" hidden>
+      </label>
+
+      <div class="group">
+        <label>Hat
+          <select id="hatSelect"></select>
+        </label>
+      </div>
+
+      <div class="group">
+        <label>Hat size
+          <input id="scaleRange" type="range" min="0.2" max="3" step="0.01" value="1">
+        </label>
+      </div>
+
+      <div class="group">
+        <label>Rotate hat
+          <input id="rotRange" type="range" min="-180" max="180" step="1" value="0">
+        </label>
+      </div>
+
+      <button id="centerBtn" class="btn">Center</button>
+      <button id="resetBtn" class="btn">Reset</button>
+      <button id="downloadBtn" class="btn primary">Download JPG</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="canvas-wrap">
+      <canvas id="c"></canvas>
+    </div>
+    <p class="hint">Drag to move the hat, scroll to resize, use sliders to rotate/scale.</p>
+  </main>
+
+  <footer>
+    <small>© Hat Overlay</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
