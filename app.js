@@ -1,4 +1,9 @@
-rot=0; centerHat(); draw(); });
+releasePointerCapture?.(e.pointerId);
+});
+
+scaleRange.addEventListener('input', ()=>{ hat.scale=parseFloat(scaleRange.value); draw(); });
+rotRange.addEventListener('input',   ()=>{ hat.rot  =parseFloat(rotRange.value); draw(); });
+resetBtn.addEventListener('click',   ()=>{ hat.scale=1; hat.rot=0; centerHat(); draw(); });
 centerBtn.addEventListener('click',  ()=>{ centerHat(); draw(); });
 
 downloadBtn.addEventListener('click', ()=>{
@@ -18,5 +23,6 @@ downloadBtn.addEventListener('click', ()=>{
 
   const a=document.createElement('a');
   a.href=out.toDataURL('image/jpeg',0.95);
-  a.download='hat-photo.jpg'; a.click();
+  a.download='hat-photo.jpg';
+  a.click();
 });
